@@ -1,0 +1,1 @@
+# gosper-shell-generator
