@@ -4,7 +4,8 @@ bank b
     set sweep_radius 0.05 0.01 0.5 0.01
     set sweep_twist 0 0 360 1
     set sweep_azimuth 0 0 360 1
-    list (sphere_radius sweep_radius sweep_twist sweep_azimuth)
+    set cross_section_sides 10 5 20 1
+    list (sphere_radius sweep_radius sweep_twist sweep_azimuth cross_section_sides)
 endbank
 point pt_0 ({expr -0.5257311121191336*$b.sphere_radius} {expr 0.7366852097826346*$b.sphere_radius} {expr -0.42532540417601994*$b.sphere_radius}) endpoint
 point pt_1 ({expr 0.5257311121191336*$b.sphere_radius} {expr 0.7366852097826346*$b.sphere_radius} {expr -0.42532540417601994*$b.sphere_radius}) endpoint
@@ -261,7 +262,7 @@ point pt_251 ({expr -0.7309935004546692*$b.sphere_radius} {expr 0.59618956228794
 
 polyline line_0 (pt_17 pt_18 pt_24 pt_19 pt_12 pt_13 pt_25 pt_26 pt_28 pt_27 pt_29 pt_20 pt_21 pt_22 pt_38 pt_23 pt_30 pt_31 pt_39 pt_40 pt_42 pt_41 pt_43 pt_34 pt_35 pt_36 pt_37 pt_57 pt_55 pt_56 pt_54 pt_53 pt_45 pt_44 pt_51 pt_52 pt_50 pt_49 pt_66 pt_48 pt_58 pt_59 pt_67 pt_68 pt_70 pt_69 pt_71 pt_62 pt_63 pt_64 pt_65 pt_85 pt_83 pt_84 pt_82 pt_81 pt_73 pt_72 pt_79 pt_80 pt_78 pt_77 pt_94 pt_76 pt_86 pt_87 pt_95 pt_96 pt_98 pt_97 pt_99 pt_90 pt_91 pt_92 pt_93 pt_113 pt_111 pt_112 pt_110 pt_109 pt_101 pt_100 pt_107 pt_108 pt_106 pt_105 pt_104 pt_127 pt_125 pt_126 pt_124 pt_123 pt_115 pt_114 pt_121 pt_122 pt_120 pt_119 pt_118 pt_141 pt_139 pt_140 pt_138 pt_137 pt_129 pt_128 pt_135 pt_136 pt_134 pt_133 pt_146 pt_132 pt_89 pt_88 pt_147 pt_148 pt_150 pt_149 pt_151 pt_142 pt_143 pt_144 pt_156 pt_145 pt_61 pt_60 pt_157 pt_158 pt_160 pt_159 pt_161 pt_152 pt_153 pt_154 pt_166 pt_155 pt_33 pt_32 pt_167 pt_168 pt_170 pt_169 pt_171 pt_162 pt_163 pt_164 pt_165 pt_181 pt_179 pt_180 pt_178 pt_177 pt_130 pt_131 pt_175 pt_176 pt_174 pt_173 pt_186 pt_172 pt_15 pt_14 pt_187 pt_188 pt_190 pt_189 pt_191 pt_182 pt_183 pt_184 pt_185 pt_201 pt_199 pt_200 pt_198 pt_197 pt_116 pt_117 pt_195 pt_196 pt_194 pt_193 pt_210 pt_192 pt_202 pt_203 pt_211 pt_212 pt_214 pt_213 pt_215 pt_206 pt_207 pt_208 pt_209 pt_225 pt_223 pt_224 pt_222 pt_221 pt_102 pt_103 pt_219 pt_220 pt_218 pt_217 pt_216 pt_235 pt_233 pt_234 pt_232 pt_231 pt_74 pt_75 pt_229 pt_230 pt_228 pt_227 pt_226 pt_245 pt_243 pt_244 pt_242 pt_241 pt_46 pt_47 pt_239 pt_240 pt_238 pt_237 pt_246 pt_236 pt_205 pt_204 pt_247 pt_248 pt_250 pt_249 pt_251 pt_16) closed endpolyline
 
-circle ngon ( $b.sweep_radius 6 ) endcircle
+circle ngon ( $b.sweep_radius $b.cross_section_sides ) endcircle
 sweep sweep_0
         crosssection ngon begincap endcap endcrosssection
         path line_0 twist $b.sweep_twist azimuth $b.sweep_azimuth mintorsion endpath
