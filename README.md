@@ -9,3 +9,4 @@ They also output .nom files that can be opened with [JIPCAD](https://jipcad.gith
 ## Possible Improvements:
 - dodecahedron generator doesn't work with other numbers of triangle cards, as some constants are hardcoded to work with a triangle length of 3
 - dodecahedron has some weird twists in JIPCAD that doesn't go away with mintorsion
+- move helper functions to single file
