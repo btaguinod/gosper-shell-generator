@@ -2,7 +2,7 @@
 
 ## Purpose
 
-These notebooks create 3D structures with patterned with cures that resemble Gosper Curves.
+These notebooks create 3D structures wrapped with patterns that resemble Gosper Curves.
 
 They also output .nom files that can be opened with [JIPCAD](https://jipcad.github.io/) so you can get 3d models of these shapes.
 
